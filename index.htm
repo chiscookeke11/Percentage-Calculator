@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		
+	<form action="" id="xIsWhatPercentOfY">
+		<h1>Calculate Percentages</h1>
+		<input type="text" placeholder="X" id="numField1"> <label for="numField1">is what percent of</label> 
+		<input type="text" placeholder="Y" id="numField2"> <label for="numField2">?</label> 
+		<input type="submit" value="Calculate">
+	</form>
+	<h3 id="resultField">100%</h3>
+</body>
+
+<script>
+	var numField1 = document.getElementById('numField1');
+	var numField2 = document.getElementById('numField2');
+	var form = document.getElementById('xIsWhatPercentOfY');
+	var resultField = document.getElementById('resultField');
+
+
+
+form.addEventListener('submit', function(event){
+	if (!numField1.value || !numField2.value){
+		alert("Please Insert Value in the input fields");
+	}
+	else{
+		var x = parseFloat(numField1.value);
+		var y = parseFloat(numField2.value);
+		var result = x / y;
+		var answer = result * 100;
+	}
+	resultField.innerText = "Answer: " + answer + "%";
+	event.preventDefault();
+}
+);
+	
+
+</script>
+</html>
